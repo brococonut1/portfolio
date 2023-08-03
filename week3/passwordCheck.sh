@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #input password
+echo -e "\e[31m"
 read -p "Enter password : " -s pword
 
 # Check password file exists
@@ -10,11 +11,12 @@ if [ -f ./Hide/secret.txt ] ; then
 	# password checked gives access or password not correct swill not give access. 
 	if [[ $(echo -n $pword | sha256sum) = $(cat <./Hide/secret.txt) ]] ; then
 		echo 
-		echo "Access Granted"
+		echo -e "\e[32mAccess Granted\e[0m"
+		sleep 2
 		exit 0
 	else
 		echo 
-		echo "Access Denied"
+		echo -e "Access Denied\e[0m"
 		exit 1
 	fi
 fi

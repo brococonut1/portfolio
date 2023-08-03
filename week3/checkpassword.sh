@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Read a password.
-echo "enter the password"
+echo -e "\e[91menter the password"
 
-read password
+read -s password
 
 # Get length of password
 
